@@ -1,5 +1,5 @@
 # Фреймворк для автоматизации тестирования сайта и мобильного приложения "Онлайн кинотеатр Ivi"
-> <a target="_blank" href="https://www.ivi.ru/">ivi.ru</a>
+> <a target="_blank" href="[https://welltory.com/]">ivi.ru</a>
 
 ![main page screenshot](/ivi_ui_and_mobile_test_framework/pictures/base_page_web.jpg)
 
