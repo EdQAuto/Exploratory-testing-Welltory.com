@@ -1,8 +1,7 @@
 # A framework for automating testing of website and mobile application "Welltory" - AI powered copilot for peak wellbeing
 > <a target="_blank" href="https://www.welltory.com/">welltory.com</a>
 
-![main page screenshot](/Welltory_UI_and_mobile_test_framework-/Picture
-/Стартовая страница.png)
+![main page screenshot](/Picture/Стартовая страница.png)
 
 ----
 
