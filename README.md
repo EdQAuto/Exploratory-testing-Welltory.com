@@ -1,4 +1,4 @@
-# A framework for automating testing of website and mobile application "Welltory" - AI powered copilot for peak wellbeing
+# A framework for automating testing of website "Welltory" - AI powered copilot for peak wellbeing
 > <a target="_blank" href="https://www.welltory.com/">welltory.com</a>
 
 ![main page screenshot](/pictures/start.png)
@@ -20,9 +20,9 @@
 ### Список проверок, реализованных в web/UI автотестах
 
 - [x] Главная страница сайта отображается
-- [x] Страница фильма отображается
-- [x] Промо страница отображается
-- [x] Найти фильм в поиске возможно
+- [x] Отображается страница  <a target="_blank" href="https://welltory.com/who-we-are">who-we-are</a>
+- [x] Отображается страница science
+- [x] Отображается страница plans
 - [x] Раздел "Что нового" отображается
 - [x] Открыть страницу "Фильмы" через верхнее меню возможно
 - [x] Открыть страницу "Сериалы" через верхнее меню возможно
@@ -48,7 +48,6 @@
   <img src="https://github.com/devicons/devicon/blob/master/icons/git/git-original.svg" title="Git" alt="Git" width="40" height="40"/>&nbsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/gitlab/gitlab-original.svg" title="GitLab" alt="GitLab" width="40" height="40"/>&nbsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/jira/jira-original.svg" title="Jira" alt="Jira" width="40" height="40"/>&nbsp;
-
   <img title="Allure Report" src="pictures/icons/Allure_Report.png" height="40" width="40"/>
   <img title="Allure TestOps" src="pictures/icons/AllureTestOps.png" height="40" width="40"/>
   <img title="Jenkins" src="pictures/icons/jenkins-original.svg" height="40" width="40"/>
