@@ -1,7 +1,7 @@
 # A framework for automating testing of website "Welltory" - AI powered copilot for peak wellbeing
 <a href="https://welltory.com" class="logo header-logo"> <img class="logo__img" src="https://welltory.com/wp-content/themes/Divi-child/img/hrt3.png" alt="logo"></a> <a target="_blank" href="https://www.welltory.com/">welltory.com</a>
 
-![main page screenshot](/pictures/start.png)
+![main page screenshot](/pictures/lending.png)
 
 ### О проекте
 
@@ -58,6 +58,8 @@
 ----
 
 # ❗️В РАЗРАБОТКЕ❗️
+
+![main page screenshot](/pictures/mobile.png)
 
 ### Особенности проекта
 
