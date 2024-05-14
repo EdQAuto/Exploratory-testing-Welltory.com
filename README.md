@@ -38,7 +38,23 @@
 
 ### Используемый стэк
 
-<img title="Python" src="Welltory/pictures/icons/python-original.svg" height="40" width="40"/> <img title="Pytest" src="ivi_ui_and_mobile_test_framework/pictures/icons/pytest-original.svg" height="40" width="40"/> <img title="Jira" src="ivi_ui_and_mobile_test_framework/pictures/icons/jira-original.svg" height="40" width="40"/> <img title="Allure Report" src="ivi_ui_and_mobile_test_framework/pictures/icons/Allure_Report.png" height="40" width="40"/> <img title="Allure TestOps" src="ivi_ui_and_mobile_test_framework/pictures/icons/AllureTestOps.png" height="40" width="40"/> <img title="GitHub" src="ivi_ui_and_mobile_test_framework/pictures/icons/github-original.svg" height="40" width="40"/> <img title="Selenoid" src="ivi_ui_and_mobile_test_framework/pictures/icons/selenoid.png" height="40" width="40"/> <img title="Selenium" src="ivi_ui_and_mobile_test_framework/pictures/icons/selenium-original.svg" height="40" width="40"/> <img title="Selene" src="ivi_ui_and_mobile_test_framework/pictures/icons/selene.png" height="40" width="40"/> <img title="Pycharm" src="ivi_ui_and_mobile_test_framework/pictures/icons/pycharm.png" height="40" width="40"/> <img title="Telegram" src="ivi_ui_and_mobile_test_framework/pictures/icons/tg.png" height="40" width="40"/> <img title="Jenkins" src="ivi_ui_and_mobile_test_framework/pictures/icons/jenkins-original.svg" height="40" width="40"/> <img title="Appium" src="ivi_ui_and_mobile_test_framework/pictures/icons/appium.svg" height="40" width="40"/> <img title="BrowserStack" src="ivi_ui_and_mobile_test_framework/pictures/icons/browserstack.svg" height="40" width="40"/>
+<div>
+  <img src="https://github.com/devicons/devicon/blob/master/icons/swagger/swagger-original.svg" title="Swagger" alt="Swagger" width="40" height="40"/>&nbsp;
+  <img src="https://github.com/devicons/devicon/blob/master/icons/postgresql/postgresql-original.svg" title="PostgreSQL" alt="PostgreSQL" width="40" height="40"/>&nbsp;
+  <img src="https://github.com/devicons/devicon/blob/master/icons/androidstudio/androidstudio-original.svg" title="AndroidStudio" alt="AndroidStudio" width="40" height="40"/>&nbsp;
+  <img src="https://github.com/devicons/devicon/blob/master/icons/postman/postman-original.svg" title="Postman" alt="Postman" width="40" height="40"/>&nbsp;
+  <img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg" title="Python" alt="Python" width="40" height="40"/>&nbsp;
+  <img src="https://github.com/devicons/devicon/blob/master/icons/selenium/selenium-original.svg" title="Selenium" alt="Selenium" width="40" height="40"/>&nbsp;
+  <img src="https://github.com/devicons/devicon/blob/master/icons/pycharm/pycharm-original.svg" title="PyCharm" alt="PyCharm" width="40" height="40"/>&nbsp;
+  <img src="https://github.com/devicons/devicon/blob/master/icons/pytest/pytest-original.svg" title="PyTest" alt="PyTest" width="40" height="40"/>&nbsp;
+  <img src="https://github.com/devicons/devicon/blob/master/icons/git/git-original.svg" title="Git" alt="Git" width="40" height="40"/>&nbsp;
+  <img src="https://github.com/devicons/devicon/blob/master/icons/gitlab/gitlab-original.svg" title="GitLab" alt="GitLab" width="40" height="40"/>&nbsp;
+  <img src="https://github.com/devicons/devicon/blob/master/icons/jira/jira-original.svg" title="Jira" alt="Jira" width="40" height="40"/>&nbsp;
+  <img src="https://github.com/devicons/devicon/blob/master/icons/confluence/confluence-original.svg" title="Confluence" alt="Confluence" width="40" height="40"/>&nbsp;
+  <img src="https://github.com/devicons/devicon/blob/master/icons/slack/slack-original.svg" title="Slack" alt="Slack" width="40" height="40"/>&nbsp;
+  <img src="https://github.com/devicons/devicon/blob/master/icons/figma/figma-original.svg" title="Figma" alt="Figma" width="40" height="40"/>&nbsp;
+  <img src="https://github.com/devicons/devicon/blob/master/icons/notion/notion-original.svg" title="Notion" alt="Notion" width="40" height="40"/>&nbsp;
+</div>
 
 ----
 
