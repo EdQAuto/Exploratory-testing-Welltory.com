@@ -16,7 +16,7 @@
 #### 🟢 Шапка лендинга:
 
 - [x] <a target="_blank" href="https://welltory.com">Главная</a> страница сайта отображается
-- [x] При нажатии на кнопку 
+- [x] При нажатии на кнопку <div class="is__controls-menu menu__cta-button dropdown-button w-dropdown-toggle" id="w-dropdown-toggle-0" aria-controls="w-dropdown-list-0" aria-haspopup="menu" aria-expanded="false" role="button" tabindex="0"><div>Holistic app</div></div>
 - [x] При нажатии на кнопку <a target="_blank" href="https://welltory.com/who-we-are">Who we are</a> происходит переход на соответствующую страницу сайта
 - [x] При нажатии на кнопку <a target="_blank" href="https://welltory.com/science">Science</a> происходит переход на соответствующую страницу сайта
 - [x] При нажатии на кнопку <a target="_blank" href="https://welltory.com/plans">Plans</a> происходит переход на соответствующую страницу сайта
