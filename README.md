@@ -20,9 +20,9 @@
 ### Список проверок, реализованных в web/UI автотестах
 
 - [x] <a target="_blank" href="https://welltory.com">Главная</a> страница сайта отображается
-- [x] Отображается страница  <a target="_blank" href="https://welltory.com/who-we-are">who-we-are</a>
-- [x] Отображается страница science
-- [x] Отображается страница plans
+- [x] Отображается страница  <a target="_blank" href="https://welltory.com/who-we-are">Who we are</a>
+- [x] Отображается страница <a target="_blank" href="https://welltory.com/who-we-are">Science</a>
+- [x] Отображается страница <a target="_blank" href="https://welltory.com/who-we-are">Plans</a>
 - [x] Раздел "Что нового" отображается
 - [x] Открыть страницу "Фильмы" через верхнее меню возможно
 - [x] Открыть страницу "Сериалы" через верхнее меню возможно
