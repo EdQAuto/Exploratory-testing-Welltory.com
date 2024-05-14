@@ -43,14 +43,18 @@
   <img src="https://github.com/devicons/devicon/blob/master/icons/pytest/pytest-original.svg" title="PyTest" alt="PyTest" width="40" height="40"/>&nbsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/pycharm/pycharm-original.svg" title="PyCharm" alt="PyCharm" width="40" height="40"/>&nbsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/selenium/selenium-original.svg" title="Selenium" alt="Selenium" width="40" height="40"/>&nbsp;
+  <img title="Selenoid" src="pictures/icons/selenoid.png" height="40" width="40"/>
+  <img title="Selene" src="pictures/icons/selene.png" height="40" width="40"/>
   <img src="https://github.com/devicons/devicon/blob/master/icons/git/git-original.svg" title="Git" alt="Git" width="40" height="40"/>&nbsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/gitlab/gitlab-original.svg" title="GitLab" alt="GitLab" width="40" height="40"/>&nbsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/jira/jira-original.svg" title="Jira" alt="Jira" width="40" height="40"/>&nbsp;
 
   <img title="Allure Report" src="pictures/icons/Allure_Report.png" height="40" width="40"/>
   <img title="Allure TestOps" src="pictures/icons/AllureTestOps.png" height="40" width="40"/>
-  <img src="https://github.com/devicons/devicon/blob/master/icons/androidstudio/androidstudio-original.svg" title="AndroidStudio" alt="AndroidStudio" width="40" height="40"/>&nbsp;
-  <img src="https://github.com/devicons/devicon/blob/master/icons/postman/postman-original.svg" title="Postman" alt="Postman" width="40" height="40"/>&nbsp;
+  <img title="Jenkins" src="pictures/icons/jenkins-original.svg" height="40" width="40"/>
+  <img title="Appium" src="pictures/icons/appium.svg" height="40" width="40"/>
+  <img title="BrowserStack" src="/pictures/icons/browserstack.svg" height="40" width="40"/>
+  <img title="Telegram" src="pictures/icons/tg.png" height="40" width="40"/>
 </div>
 
 ----
