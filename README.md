@@ -19,7 +19,7 @@
 
 ### Список проверок, реализованных в web/UI автотестах
 
-- [x] Главная страница сайта отображается
+- [x] <a target="_blank" href="https://welltory.com">Главная</a> страница сайта отображается
 - [x] Отображается страница  <a target="_blank" href="https://welltory.com/who-we-are">who-we-are</a>
 - [x] Отображается страница science
 - [x] Отображается страница plans
