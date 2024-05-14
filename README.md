@@ -32,13 +32,30 @@
 
 - [x] Элементы управления отображаются
 - [x] Раздел "Сериалы" отображается
-- [x] Раздел "Профиль" отображается
+- [ ] Раздел "Профиль" отображается
 
 ----
 
 ### Используемый стэк
 
-<img title="Python" src="ivi_ui_and_mobile_test_framework/pictures/icons/python-original.svg" height="40" width="40"/> <img title="Pytest" src="ivi_ui_and_mobile_test_framework/pictures/icons/pytest-original.svg" height="40" width="40"/> <img title="Jira" src="ivi_ui_and_mobile_test_framework/pictures/icons/jira-original.svg" height="40" width="40"/> <img title="Allure Report" src="ivi_ui_and_mobile_test_framework/pictures/icons/Allure_Report.png" height="40" width="40"/> <img title="Allure TestOps" src="ivi_ui_and_mobile_test_framework/pictures/icons/AllureTestOps.png" height="40" width="40"/> <img title="GitHub" src="ivi_ui_and_mobile_test_framework/pictures/icons/github-original.svg" height="40" width="40"/> <img title="Selenoid" src="ivi_ui_and_mobile_test_framework/pictures/icons/selenoid.png" height="40" width="40"/> <img title="Selenium" src="ivi_ui_and_mobile_test_framework/pictures/icons/selenium-original.svg" height="40" width="40"/> <img title="Selene" src="ivi_ui_and_mobile_test_framework/pictures/icons/selene.png" height="40" width="40"/> <img title="Pycharm" src="ivi_ui_and_mobile_test_framework/pictures/icons/pycharm.png" height="40" width="40"/> <img title="Telegram" src="ivi_ui_and_mobile_test_framework/pictures/icons/tg.png" height="40" width="40"/> <img title="Jenkins" src="ivi_ui_and_mobile_test_framework/pictures/icons/jenkins-original.svg" height="40" width="40"/> <img title="Appium" src="ivi_ui_and_mobile_test_framework/pictures/icons/appium.svg" height="40" width="40"/> <img title="BrowserStack" src="ivi_ui_and_mobile_test_framework/pictures/icons/browserstack.svg" height="40" width="40"/>
+<div>
+  <img src="https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg" title="Python" alt="Python" width="40" height="40"/>&nbsp;
+  <img src="https://github.com/devicons/devicon/blob/master/icons/pytest/pytest-original.svg" title="PyTest" alt="PyTest" width="40" height="40"/>&nbsp;
+  <img src="https://github.com/devicons/devicon/blob/master/icons/pycharm/pycharm-original.svg" title="PyCharm" alt="PyCharm" width="40" height="40"/>&nbsp;
+  <img src="https://github.com/devicons/devicon/blob/master/icons/selenium/selenium-original.svg" title="Selenium" alt="Selenium" width="40" height="40"/>&nbsp;
+  <img title="Selenoid" src="pictures/icons/selenoid.png" height="40" width="40"/>
+  <img title="Selene" src="pictures/icons/selene.png" height="40" width="40"/>
+  <img src="https://github.com/devicons/devicon/blob/master/icons/git/git-original.svg" title="Git" alt="Git" width="40" height="40"/>&nbsp;
+  <img src="https://github.com/devicons/devicon/blob/master/icons/gitlab/gitlab-original.svg" title="GitLab" alt="GitLab" width="40" height="40"/>&nbsp;
+  <img src="https://github.com/devicons/devicon/blob/master/icons/jira/jira-original.svg" title="Jira" alt="Jira" width="40" height="40"/>&nbsp;
+
+  <img title="Allure Report" src="pictures/icons/Allure_Report.png" height="40" width="40"/>
+  <img title="Allure TestOps" src="pictures/icons/AllureTestOps.png" height="40" width="40"/>
+  <img title="Jenkins" src="pictures/icons/jenkins-original.svg" height="40" width="40"/>
+  <img title="Appium" src="pictures/icons/appium.svg" height="40" width="40"/>
+  <img title="BrowserStack" src="/pictures/icons/browserstack.svg" height="40" width="40"/>
+  <img title="Telegram" src="pictures/icons/tg.png" height="40" width="40"/>
+</div>
 
 ----
 
@@ -154,7 +171,7 @@ COMMENT = 'some comment' # Комментарий
 ----
 
 ### Интеграция с Jira
-> <a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-1021">Ссылка на проект</a>
+> <a target="_blank" href="https://ed-qa-engineer.atlassian.net/jira/software/projects/KAN/boards/1">Ссылка на проект</a>
 
 ![jira_project](ivi_ui_and_mobile_test_framework/pictures/jira_project.png)
 
