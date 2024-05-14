@@ -3,7 +3,7 @@
 
 ![main page screenshot](/pictures/lending.png)
 
-### <a href="https://welltory.com" class="logo header-logo"> <img class="logo__img" src="https://welltory.com/wp-content/themes/Divi-child/img/hrt3.png" alt="logo"></a> О проекте
+### <a href="https://welltory.com" class="logo header-logo"> <img class="logo__img" src="https://welltory.com/wp-content/themes/Divi-child/img/hrt3.png" alt="logo"> О проекте
 
 * Данный проект создается при помощи AI 
 * Данный проект осуществляется в рамках исследовательского тестирования
