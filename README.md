@@ -37,7 +37,7 @@
 
 #### Логотип на странице <a target="_blank" href="https://welltory.com/science">Plans</a> :
 
-- [x] При нажатии на логотип <a class="ALink_link__cECDm Header_logoLink__smJHy" target="_self" href="/"></a> происходит переход на <a target="_blank" href="https://welltory.com">главную</a> страницу сайта
+- [x] При нажатии на логотип <img title="Telegram" src="pictures/icons/tg.png" height="40" width="40"/> происходит переход на <a target="_blank" href="https://welltory.com">главную</a> страницу сайта
 
 ### Список проверок, реализованных в mobile автотестах
 
