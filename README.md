@@ -22,15 +22,19 @@
 #### Главная страница:
 
 - [x] <a target="_blank" href="https://welltory.com">Главная</a> страница сайта отображается
-- [ ] При нажатии на кнопку <a target="_blank" href="https://welltory.com/who-we-are">Who we are</a> происходит переход на соответствующую страницу сайта
-
-#### Логотип:
-
-- [x] При нажатии на кнопку <img src="https://assets-global.website-files.com/660e8783c2152f6174eadc26/661304852a6aba8cccf8b761_menu%20logo.svg" alt="" width="Auto" class="image-62"> происходит переход на соответствующую страницу сайта
-- [x] При нажатии на логотип <img src="https://assets-global.website-files.com/660e8783c2152f6174eadc26/661304852a6aba8cccf8b761_menu%20logo.svg" alt="" width="Auto" class="image-62">  происходит переход на <a target="_blank" href="https://welltory.com">главную</a> страницу сайта
+- [ ] 
+- [x] При нажатии на кнопку <a target="_blank" href="https://welltory.com/who-we-are">Who we are</a> происходит переход на соответствующую страницу сайта
 - [x] При нажатии на кнопку <a target="_blank" href="https://welltory.com/science">Science</a> происходит переход на соответствующую страницу сайта
-- [x] При нажатии на логотип <a href="https://welltory.com" class="logo header-logo"> <img class="logo__img" src="https://welltory.com/wp-content/themes/Divi-child/img/hrt3.png" alt="logo"></a>  происходит переход на <a target="_blank" href="https://welltory.com">главную</a> страницу сайта
 - [x] При нажатии на кнопку <a target="_blank" href="https://welltory.com/plans">Plans</a> происходит переход на соответствующую страницу сайта
+      
+#### Логотип на странице <a target="_blank" href="https://welltory.com/who-we-are">Who we are</a> :
+
+- [x] При нажатии на логотип <img src="https://assets-global.website-files.com/660e8783c2152f6174eadc26/661304852a6aba8cccf8b761_menu%20logo.svg" alt="" width="Auto" class="image-62">  происходит переход на <a target="_blank" href="https://welltory.com">главную</a> страницу сайта
+
+
+
+- [x] При нажатии на логотип <a href="https://welltory.com" class="logo header-logo"> <img class="logo__img" src="https://welltory.com/wp-content/themes/Divi-child/img/hrt3.png" alt="logo"></a>  происходит переход на <a target="_blank" href="https://welltory.com">главную</a> страницу сайта
+
 - [x] При нажатии на логотип <a href="https://welltory.com" class="logo header-logo"> <img class="logo__img" src="https://welltory.com/wp-content/themes/Divi-child/img/hrt3.png" alt="logo"></a>  происходит переход на <a target="_blank" href="https://welltory.com">главную</a> страницу сайта
 
 ### Список проверок, реализованных в mobile автотестах
