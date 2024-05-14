@@ -20,11 +20,12 @@
 ### Список проверок, реализованных в web/UI автотестах
 
 - [x] <a target="_blank" href="https://welltory.com">Главная</a> страница сайта отображается
-- [x] При нажатии на логотип <a href="https://welltory.com" class="logo header-logo"> <img class="logo__img" src="https://welltory.com/wp-content/themes/Divi-child/img/hrt3.png" alt="logo"></a>  происходит переход на <a target="_blank" href="https://welltory.com">Главная</a> соответствующую страницу сайта
-- [ ] При нажатии на кнопку <a target="_blank" href="https://welltory.com/who-we-are">Who we are</a> происходит переход на  страницу сайта
-- [x] При нажатии на кнопку <a target="_blank" href="https://welltory.com/who-we-are">Science</a> происходит переход на соответствующую страницу сайта
-- [x] При нажатии на кнопку <a target="_blank" href="https://welltory.com/who-we-are">Plans</a> происходит переход на соответствующую страницу сайта
-- [x] Раздел "Что нового" отображается
+- [x] При нажатии на кнопку <a target="_blank" href="https://welltory.com/who-we-are">Who we are</a> происходит переход на соответствующую страницу сайта
+- [ ] При нажатии на логотип <a href="https://welltory.com" class="logo header-logo"> <img class="logo__img" src="https://welltory.com/wp-content/themes/Divi-child/img/hrt3.png" alt="logo"></a>  происходит переход на <a target="_blank" href="https://welltory.com">главную</a> страницу сайта
+- [x] При нажатии на кнопку <a target="_blank" href="https://welltory.com/science">Science</a> происходит переход на соответствующую страницу сайта
+- [ ] При нажатии на логотип <a href="https://welltory.com" class="logo header-logo"> <img class="logo__img" src="https://welltory.com/wp-content/themes/Divi-child/img/hrt3.png" alt="logo"></a>  происходит переход на <a target="_blank" href="https://welltory.com">главную</a> страницу сайта
+- [x] При нажатии на кнопку <a target="_blank" href="https://welltory.com/plans">Plans</a> происходит переход на соответствующую страницу сайта
+- [x] При нажатии на логотип <a href="https://welltory.com" class="logo header-logo"> <img class="logo__img" src="https://welltory.com/wp-content/themes/Divi-child/img/hrt3.png" alt="logo"></a>  происходит переход на <a target="_blank" href="https://welltory.com">главную</a> страницу сайта
 - [x] Открыть страницу "Фильмы" через верхнее меню возможно
 - [x] Открыть страницу "Сериалы" через верхнее меню возможно
 - [x] Открыть страницу "Мультфильмы" через верхнее меню возможно
