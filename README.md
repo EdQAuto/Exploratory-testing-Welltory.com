@@ -55,9 +55,6 @@
   <img src="https://github.com/devicons/devicon/blob/master/icons/jira/jira-original.svg" title="Jira" alt="Jira" width="40" height="40"/>&nbsp;
   <img title="Allure Report" src="pictures/icons/Allure_Report.png" height="40" width="40"/>
   <img title="Allure TestOps" src="pictures/icons/AllureTestOps.png" height="40" width="40"/>
-  <img title="Jenkins" src="pictures/icons/jenkins-original.svg" height="40" width="40"/>
-  <img title="Appium" src="pictures/icons/appium.svg" height="40" width="40"/>
-  <img title="BrowserStack" src="/pictures/icons/browserstack.svg" height="40" width="40"/>
   <img title="Telegram" src="pictures/icons/tg.png" height="40" width="40"/>
 </div>
 
