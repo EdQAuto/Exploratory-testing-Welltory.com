@@ -17,7 +17,7 @@
 
 - [x] <a target="_blank" href="https://welltory.com">Главная</a> страница сайта отображается
 - [x] При нажатии на кнопку 
-- [x] При нажатии на кнопку ##### <a target="_blank" href="https://welltory.com/who-we-are">Who we are</a> происходит переход на соответствующую страницу сайта
+- [x] При нажатии на кнопку <a target="_blank" href="https://welltory.com/who-we-are">Who we are</a> происходит переход на соответствующую страницу сайта
 - [x] При нажатии на кнопку <a target="_blank" href="https://welltory.com/science">Science</a> происходит переход на соответствующую страницу сайта
 - [x] При нажатии на кнопку <a target="_blank" href="https://welltory.com/plans">Plans</a> происходит переход на соответствующую страницу сайта
       
