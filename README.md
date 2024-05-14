@@ -171,7 +171,7 @@ COMMENT = 'some comment' # Комментарий
 ----
 
 ### Интеграция с Jira
-> <a target="_blank" href="https://jira.autotests.cloud/browse/HOMEWORK-1021">Ссылка на проект</a>
+> <a target="_blank" href="https://ed-qa-engineer.atlassian.net/jira/software/projects/KAN/boards/1">Ссылка на проект</a>
 
 ![jira_project](ivi_ui_and_mobile_test_framework/pictures/jira_project.png)
 
