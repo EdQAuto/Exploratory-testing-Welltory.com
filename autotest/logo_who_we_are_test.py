@@ -2,44 +2,41 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException, NoSuchElementException
 
-# Создаем экземпляр WebDriver (в данном случае для Chrome)
+# Инициализация WebDriver
 driver = webdriver.Chrome()
 
 try:
-    # Открываем страницу https://welltory.com/plans/
-    driver.get("https://welltory.com/plans/")
+    # 1. Открыть страницу https://welltory.com/who-we-are
+    driver.get('https://welltory.com/who-we-are')
 
-    # Ожидание загрузки страницы
-    WebDriverWait(driver, 15).until(
-        EC.presence_of_element_located((By.CSS_SELECTOR, ".ALink_link__cECDm.Header_logoLink__smJHy")))
+    # 2. Найти ссылку на логотип
+    logo_link = driver.find_element(By.CSS_SELECTOR, 'a.navbar-brand.w-nav-brand')
 
-    # Находим ссылку на логотип и дожидаемся, когда она станет кликабельной
-    logo_link = WebDriverWait(driver, 15).until(
-        EC.element_to_be_clickable((By.CSS_SELECTOR, ".ALink_link__cECDm.Header_logoLink__smJHy"))
+    # 3. Получить URL ссылки на логотип
+    logo_url = logo_link.get_attribute('href').rstrip('/')
+
+    # 4. Проверить, что URL ссылки на логотип соответствует ожидаемому
+    expected_logo_url = 'https://welltory.com'
+    assert logo_url == expected_logo_url, (
+        f"Expected logo URL to be {expected_logo_url}, but got {logo_url}"
     )
 
-    # Получаем URL ссылки на логотип
-    logo_link_url = logo_link.get_attribute("href")
-
-    # Проверяем, что URL ссылки на логотип соответствует ожидаемому
-    expected_logo_link_url = "https://welltory.com/"
-    assert logo_link_url == expected_logo_link_url, f"URL ссылки на логотип не соответствует ожидаемому. Ожидаемый URL: {expected_logo_link_url}, фактический URL: {logo_link_url}"
-
-    # Кликаем по ссылке на логотип
+    # 5. Кликнуть по ссылке на логотип
     logo_link.click()
 
-    # Ожидаем, что переход выполнен успешно и мы находимся на странице https://welltory.com/
-    WebDriverWait(driver, 15).until(EC.url_to_be("https://welltory.com/"))
+    # 6. Проверить, что переход выполнен успешно и мы находимся на странице https://welltory.com/
+    WebDriverWait(driver, 10).until(EC.url_to_be('https://welltory.com/'))
+    assert driver.current_url.rstrip('/') == 'https://welltory.com', (
+        f"Expected URL to be 'https://welltory.com', but got {driver.current_url}"
+    )
 
-    # Проверяем, что на отображаемой странице присутствует текст "A Healthier Happier You"
-    expected_text = "A Healthier Happier You"
-    assert expected_text in driver.page_source, f"Текст '{expected_text}' не найден на странице"
-
-except (TimeoutException, NoSuchElementException) as e:
-    print(f"Произошла ошибка: {e}")
+    # 7. Проверить, что на отображаемой странице присутствует текст "A Healthier Happier You"
+    page_text = driver.find_element(By.TAG_NAME, 'body').text
+    assert 'A Healthier Happier You' in page_text, (
+        "Expected text 'A Healthier Happier You' not found on the page"
+    )
 
 finally:
-    # Закрываем браузер в любом случае, даже если возникла ошибка
+    # 8. Закрыть браузер
     driver.quit()
