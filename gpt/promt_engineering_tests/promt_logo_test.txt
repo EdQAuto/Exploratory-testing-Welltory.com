@@ -1,0 +1,820 @@
+ЗАПРОС к AI
+Отвечай как опытный QA engineer. Ответ давай на русском языке с пояснениями (аргументами выбора).
+Напиши код автотеста навигации по сайту, на языке Python и фреймворке Pytest,
+для проверки перехода на главную страницу при клике на логотип.
+Тест должен выполняет следующие действия:
+
+1. Открывает страницу https://welltory.com/plans/.
+2. Находит ссылку на логотип (By.CLASS_NAME, 'ALink_link__cECDm.Header_logoLink__smJHy').
+3. Получает URL ссылки на логотип.
+4. Проверяет, что URL ссылки на логотип соответствует ожидаемому.
+5. Кликает по ссылке на логотип.
+6. Проверяет, что переход выполнен успешно и мы находимся на странице https://welltory.com/.
+7. Проверяет, что на отображаемой странице присутствует текст "A Healthier Happier You".
+8. В случае получения ошибки выводит информацию о деталях ошибки.
+8. Закрывает браузер.
+
+ОТВЕТ AI
+
+Вот полный пример кода для указанного автотеста:
+import pytest
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+@pytest.fixture
+def browser():
+    driver = webdriver.Chrome()  # Убедитесь, что у вас установлен ChromeDriver
+    yield driver
+    driver.quit()
+
+def test_logo_navigation(browser):
+    try:
+        # 1. Открываем страницу https://welltory.com/plans/
+        browser.get("https://welltory.com/plans/")
+
+        # 2. Находим ссылку на логотип
+        logo_link = WebDriverWait(browser, 10).until(
+            EC.presence_of_element_located((By.CLASS_NAME, 'ALink_link__cECDm.Header_logoLink__smJHy'))
+        )
+
+        # 3. Получаем URL ссылки на логотип
+        logo_url = logo_link.get_attribute('href')
+
+        # 4. Проверяем, что URL ссылки на логотип соответствует ожидаемому
+        expected_url = "https://welltory.com/"
+        assert logo_url == expected_url, f"URL логотипа {logo_url} не соответствует ожидаемому {expected_url}"
+
+        # 5. Кликаем по ссылке на логотип
+        logo_link.click()
+
+        # 6. Проверяем, что переход выполнен успешно и мы находимся на странице https://welltory.com/
+        WebDriverWait(browser, 10).until(EC.url_to_be(expected_url))
+        assert browser.current_url == expected_url, f"Текущий URL {browser.current_url} не соответствует ожидаемому {expected_url}"
+
+        # 7. Проверяем, что на отображаемой странице присутствует текст "A Healthier Happier You"
+        page_text = WebDriverWait(browser, 10).until(
+            EC.presence_of_element_located((By.XPATH, "//*[contains(text(), 'A Healthier Happier You')]"))
+        )
+        assert page_text is not None, "Текст 'A Healthier Happier You' не найден на странице"
+
+    except Exception as e:
+        # 8. В случае получения ошибки выводим информацию о деталях ошибки
+        pytest.fail(f"Test failed due to: {str(e)}")
+    finally:
+        # 9. Закрываем браузер
+        browser.quit()
+
+
+ПОЯСНЕНИЯ AI
+1. Открытие страницы: Используем метод get для открытия указанной страницы.
+2. Поиск элемента логотипа: Используем WebDriverWait для ожидания, пока элемент станет доступным, что помогает избежать ошибок из-за задержек загрузки страницы.
+3. Получение URL ссылки: Извлекаем атрибут href у найденного элемента.
+4. Проверка URL: Сравниваем полученный URL с ожидаемым.
+5. Клик по элементу: Выполняем действие клика.
+6. Проверка перехода: Убедиться, что текущий URL браузера соответствует ожидаемому.
+7. Проверка текста: Ищем на странице текст "A Healthier Happier You" для подтверждения успешной загрузки нужной страницы.
+8. Обработка ошибок: Выводим сообщение об ошибке, если что-то пошло не так.
+9. Закрытие браузера: Используем finally, чтобы гарантировать закрытие браузера в любом случае.
+
+РЕЗУЛЬТАТ ПРОЙДЕННОГО ТЕСТА (ответ в логах консоли):
+C:\Users\ilyas\PycharmProjects\Welltory\venv\Scripts\python.exe "C:/Program Files/JetBrains/PyCharm Community Edition 2024.1/plugins/python-ce/helpers/pycharm/_jb_pytest_runner.py" --path C:\Users\ilyas\PycharmProjects\Welltory\autotests\bug_logo_test.py
+Testing started at 13:10 ...
+Launching pytest with arguments C:\Users\ilyas\PycharmProjects\Welltory\autotests\bug_logo_test.py --no-header --no-summary -q in C:\Users\ilyas\PycharmProjects\Welltory\autotests
+
+============================= test session starts =============================
+collecting ... collected 1 item
+
+bug_logo_test.py::test_logo_navigation FAILED                            [100%]
+bug_logo_test.py:14 (test_logo_navigation)
+browser = <selenium.webdriver.chrome.webdriver.WebDriver (session="496c8929f9e670e5b31d6860d2c225cc")>
+
+    def test_logo_navigation(browser):
+        try:
+            # 1. Открываем страницу https://welltory.com/plans/
+            browser.get("https://welltory.com/plans/")
+
+            # 2. Находим ссылку на логотип
+            logo_link = WebDriverWait(browser, 10).until(
+                EC.presence_of_element_located((By.CLASS_NAME, 'ALink_link__cECDm.Header_logoLink__smJHy'))
+            )
+
+            # 3. Получаем URL ссылки на логотип
+            logo_url = logo_link.get_attribute('href')
+
+            # 4. Проверяем, что URL ссылки на логотип соответствует ожидаемому
+            expected_url = "https://welltory.com/"
+            assert logo_url == expected_url, f"URL логотипа {logo_url} не соответствует ожидаемому {expected_url}"
+
+            # 5. Кликаем по ссылке на логотип
+            logo_link.click()
+
+            # 6. Проверяем, что переход выполнен успешно и мы находимся на странице https://welltory.com/
+>           WebDriverWait(browser, 10).until(EC.url_to_be(expected_url))
+
+bug_logo_test.py:36:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <selenium.webdriver.support.wait.WebDriverWait (session="496c8929f9e670e5b31d6860d2c225cc")>
+method = <function url_to_be.<locals>._predicate at 0x000001FF4AB654E0>
+message = ''
+
+    def until(self, method: Callable[[D], Union[Literal[False], T]], message: str = "") -> T:
+        """Calls the method provided with the driver as an argument until the \
+        return value does not evaluate to ``False``.
+
+        :param method: callable(WebDriver)
+        :param message: optional message for :exc:`TimeoutException`
+        :returns: the result of the last call to `method`
+        :raises: :exc:`selenium.common.exceptions.TimeoutException` if timeout occurs
+        """
+        screen = None
+        stacktrace = None
+
+        end_time = time.monotonic() + self._timeout
+        while True:
+            try:
+                value = method(self._driver)
+                if value:
+                    return value
+            except self._ignored_exceptions as exc:
+                screen = getattr(exc, "screen", None)
+                stacktrace = getattr(exc, "stacktrace", None)
+            time.sleep(self._poll)
+            if time.monotonic() > end_time:
+                break
+>       raise TimeoutException(message, screen, stacktrace)
+E       selenium.common.exceptions.TimeoutException: Message:
+
+..\venv\Lib\site-packages\selenium\webdriver\support\wait.py:105: TimeoutException
+
+During handling of the above exception, another exception occurred:
+
+browser = <selenium.webdriver.chrome.webdriver.WebDriver (session="496c8929f9e670e5b31d6860d2c225cc")>
+
+    def test_logo_navigation(browser):
+        try:
+            # 1. Открываем страницу https://welltory.com/plans/
+            browser.get("https://welltory.com/plans/")
+
+            # 2. Находим ссылку на логотип
+            logo_link = WebDriverWait(browser, 10).until(
+                EC.presence_of_element_located((By.CLASS_NAME, 'ALink_link__cECDm.Header_logoLink__smJHy'))
+            )
+
+            # 3. Получаем URL ссылки на логотип
+            logo_url = logo_link.get_attribute('href')
+
+            # 4. Проверяем, что URL ссылки на логотип соответствует ожидаемому
+            expected_url = "https://welltory.com/"
+            assert logo_url == expected_url, f"URL логотипа {logo_url} не соответствует ожидаемому {expected_url}"
+
+            # 5. Кликаем по ссылке на логотип
+            logo_link.click()
+
+            # 6. Проверяем, что переход выполнен успешно и мы находимся на странице https://welltory.com/
+            WebDriverWait(browser, 10).until(EC.url_to_be(expected_url))
+            assert browser.current_url == expected_url, f"Текущий URL {browser.current_url} не соответствует ожидаемому {expected_url}"
+
+            # 7. Проверяем, что на отображаемой странице присутствует текст "A Healthier Happier You"
+            page_text = WebDriverWait(browser, 10).until(
+                EC.presence_of_element_located((By.XPATH, "//*[contains(text(), 'A Healthier Happier You')]"))
+            )
+            assert page_text is not None, "Текст 'A Healthier Happier You' не найден на странице"
+
+        except Exception as e:
+            # 8. В случае получения ошибки выводим информацию о деталях ошибки
+>           pytest.fail(f"Test failed due to: {str(e)}")
+E           Failed: Test failed due to: Message:
+
+bug_logo_test.py:47: Failed
+
+
+============================= 1 failed in 38.08s ==============================
+
+Process finished with exit code 1
+
+
+ПОЯСНЕНИЯ AI:
+Ошибка, с которой вы столкнулись, указывает на то, что тест не смог дождаться, пока текущий URL браузера изменится на ожидаемый https://welltory.com/. Возможные причины включают в себя:
+Элемент логотипа может не быть кликабельным: Возможно, элемент находится в скрытом состоянии или перекрыт другим элементом.
+Перенаправление может занять больше времени: Переход может занять больше времени, чем указано в ожидании (10 секунд).
+URL после клика по логотипу может быть неправильным: Возможны ошибки в URL или на странице происходит перенаправление на другой URL.
+Попробуем улучшить тест, добавив больше отладочной информации и увеличив время ожидания.
+Изменения и улучшения:
+Добавлено ожидание кликабельности элемента: Используется EC.element_to_be_clickable для проверки того, что элемент логотипа кликабелен перед выполнением клика.
+Увеличено время ожидания URL: Увеличено время ожидания URL до 20 секунд, чтобы учесть возможные задержки.
+Дополнительная обработка исключений: Добавлена обработка TimeoutException и WebDriverException с целью предоставления более детализированных сообщений об ошибках.
+Более детализированные сообщения об ошибках: В каждом блоке except теперь выводятся конкретные причины ошибок, что упрощает диагностику.
+
+
+
+ИСПРАВЛЕННЫЙ КОД:
+import pytest
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException, WebDriverException
+
+@pytest.fixture
+def browser():
+    driver = webdriver.Chrome()  # Убедитесь, что у вас установлен ChromeDriver
+    yield driver
+    driver.quit()
+
+def test_logo_navigation(browser):
+    try:
+        # 1. Открываем страницу https://welltory.com/plans/
+        browser.get("https://welltory.com/plans/")
+
+        # 2. Находим ссылку на логотип
+        logo_link = WebDriverWait(browser, 10).until(
+            EC.presence_of_element_located((By.CLASS_NAME, 'ALink_link__cECDm.Header_logoLink__smJHy'))
+        )
+
+        # 3. Получаем URL ссылки на логотип
+        logo_url = logo_link.get_attribute('href')
+
+        # 4. Проверяем, что URL ссылки на логотип соответствует ожидаемому
+        expected_url = "https://welltory.com/"
+        assert logo_url == expected_url, f"URL логотипа {logo_url} не соответствует ожидаемому {expected_url}"
+
+        # 5. Кликаем по ссылке на логотип
+        WebDriverWait(browser, 10).until(EC.element_to_be_clickable((By.CLASS_NAME, 'ALink_link__cECDm.Header_logoLink__smJHy')))
+        logo_link.click()
+
+        # 6. Проверяем, что переход выполнен успешно и мы находимся на странице https://welltory.com/
+        WebDriverWait(browser, 20).until(EC.url_to_be(expected_url))
+        assert browser.current_url == expected_url, f"Текущий URL {browser.current_url} не соответствует ожидаемому {expected_url}"
+
+        # 7. Проверяем, что на отображаемой странице присутствует текст "A Healthier Happier You"
+        page_text = WebDriverWait(browser, 20).until(
+            EC.presence_of_element_located((By.XPATH, "//*[contains(text(), 'A Healthier Happier You')]"))
+        )
+        assert page_text is not None, "Текст 'A Healthier Happier You' не найден на странице"
+
+    except TimeoutException as e:
+        pytest.fail(f"Test failed due to TimeoutException: {str(e)}")
+    except WebDriverException as e:
+        pytest.fail(f"Test failed due to WebDriverException: {str(e)}")
+    except Exception as e:
+        pytest.fail(f"Test failed due to an unexpected exception: {str(e)}")
+    finally:
+        # 8. Закрываем браузер
+        browser.quit()
+
+
+РЕЗУЛЬТАТ ПРОЙДЕННОГО ТЕСТА (ответ в логах консоли):
+C:\Users\ilyas\PycharmProjects\Welltory\venv\Scripts\python.exe "C:/Program Files/JetBrains/PyCharm Community Edition 2024.1/plugins/python-ce/helpers/pycharm/_jb_pytest_runner.py" --path C:\Users\ilyas\PycharmProjects\Welltory\autotests\x_test.py
+Testing started at 13:17 ...
+Launching pytest with arguments C:\Users\ilyas\PycharmProjects\Welltory\autotests\x_test.py --no-header --no-summary -q in C:\Users\ilyas\PycharmProjects\Welltory\autotests
+
+============================= test session starts =============================
+collecting ... collected 1 item
+
+x_test.py::test_logo_navigation FAILED                                   [100%]
+x_test.py:15 (test_logo_navigation)
+browser = <selenium.webdriver.chrome.webdriver.WebDriver (session="cfad3ae97d77ad6ccad760cf46d11eb3")>
+
+    def test_logo_navigation(browser):
+        try:
+            # 1. Открываем страницу https://welltory.com/plans/
+            browser.get("https://welltory.com/plans/")
+
+            # 2. Находим ссылку на логотип
+            logo_link = WebDriverWait(browser, 10).until(
+                EC.presence_of_element_located((By.CLASS_NAME, 'ALink_link__cECDm.Header_logoLink__smJHy'))
+            )
+
+            # 3. Получаем URL ссылки на логотип
+            logo_url = logo_link.get_attribute('href')
+
+            # 4. Проверяем, что URL ссылки на логотип соответствует ожидаемому
+            expected_url = "https://welltory.com/"
+            assert logo_url == expected_url, f"URL логотипа {logo_url} не соответствует ожидаемому {expected_url}"
+
+            # 5. Кликаем по ссылке на логотип
+            WebDriverWait(browser, 10).until(
+                EC.element_to_be_clickable((By.CLASS_NAME, 'ALink_link__cECDm.Header_logoLink__smJHy')))
+            logo_link.click()
+
+            # 6. Проверяем, что переход выполнен успешно и мы находимся на странице https://welltory.com/
+>           WebDriverWait(browser, 20).until(EC.url_to_be(expected_url))
+
+x_test.py:39:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <selenium.webdriver.support.wait.WebDriverWait (session="cfad3ae97d77ad6ccad760cf46d11eb3")>
+method = <function url_to_be.<locals>._predicate at 0x0000021956C55440>
+message = ''
+
+    def until(self, method: Callable[[D], Union[Literal[False], T]], message: str = "") -> T:
+        """Calls the method provided with the driver as an argument until the \
+        return value does not evaluate to ``False``.
+
+        :param method: callable(WebDriver)
+        :param message: optional message for :exc:`TimeoutException`
+        :returns: the result of the last call to `method`
+        :raises: :exc:`selenium.common.exceptions.TimeoutException` if timeout occurs
+        """
+        screen = None
+        stacktrace = None
+
+        end_time = time.monotonic() + self._timeout
+        while True:
+            try:
+                value = method(self._driver)
+                if value:
+                    return value
+            except self._ignored_exceptions as exc:
+                screen = getattr(exc, "screen", None)
+                stacktrace = getattr(exc, "stacktrace", None)
+            time.sleep(self._poll)
+            if time.monotonic() > end_time:
+                break
+>       raise TimeoutException(message, screen, stacktrace)
+E       selenium.common.exceptions.TimeoutException: Message:
+
+..\venv\Lib\site-packages\selenium\webdriver\support\wait.py:105: TimeoutException
+
+During handling of the above exception, another exception occurred:
+
+browser = <selenium.webdriver.chrome.webdriver.WebDriver (session="cfad3ae97d77ad6ccad760cf46d11eb3")>
+
+    def test_logo_navigation(browser):
+        try:
+            # 1. Открываем страницу https://welltory.com/plans/
+            browser.get("https://welltory.com/plans/")
+
+            # 2. Находим ссылку на логотип
+            logo_link = WebDriverWait(browser, 10).until(
+                EC.presence_of_element_located((By.CLASS_NAME, 'ALink_link__cECDm.Header_logoLink__smJHy'))
+            )
+
+            # 3. Получаем URL ссылки на логотип
+            logo_url = logo_link.get_attribute('href')
+
+            # 4. Проверяем, что URL ссылки на логотип соответствует ожидаемому
+            expected_url = "https://welltory.com/"
+            assert logo_url == expected_url, f"URL логотипа {logo_url} не соответствует ожидаемому {expected_url}"
+
+            # 5. Кликаем по ссылке на логотип
+            WebDriverWait(browser, 10).until(
+                EC.element_to_be_clickable((By.CLASS_NAME, 'ALink_link__cECDm.Header_logoLink__smJHy')))
+            logo_link.click()
+
+            # 6. Проверяем, что переход выполнен успешно и мы находимся на странице https://welltory.com/
+            WebDriverWait(browser, 20).until(EC.url_to_be(expected_url))
+            assert browser.current_url == expected_url, f"Текущий URL {browser.current_url} не соответствует ожидаемому {expected_url}"
+
+            # 7. Проверяем, что на отображаемой странице присутствует текст "A Healthier Happier You"
+            page_text = WebDriverWait(browser, 20).until(
+                EC.presence_of_element_located((By.XPATH, "//*[contains(text(), 'A Healthier Happier You')]"))
+            )
+            assert page_text is not None, "Текст 'A Healthier Happier You' не найден на странице"
+
+        except TimeoutException as e:
+>           pytest.fail(f"Test failed due to TimeoutException: {str(e)}")
+E           Failed: Test failed due to TimeoutException: Message:
+
+x_test.py:49: Failed
+
+
+============================= 1 failed in 46.68s ==============================
+
+Process finished with exit code 1
+
+
+ПОЯСНЕНИЯ AI:
+На основе логов, кажется, что после клика на логотип переход на главную страницу не выполняется в течение ожидаемого времени (20 секунд). Это может быть вызвано различными причинами, такими как медленная загрузка страницы или перенаправление на другой URL. Чтобы понять причину, необходимо добавить больше отладочной информации и провести дополнительную проверку после клика на логотип.
+
+Попробуем следующий подход:
+1. Проверим, действительно ли произошел клик.
+2. Выведем текущий URL браузера после клика для отладки.
+3. Убедимся, что URL корректен.
+
+Объяснение изменений:
+Отладочная информация: После клика по логотипу выводится текущий URL. Это поможет определить, изменился ли URL после клика и куда именно перенаправляется пользователь.
+Дополнительные сообщения об ошибках: В случае TimeoutException выводится текущий URL, чтобы понять, на какой странице находится браузер в момент ошибки.
+
+
+ИСПРАВЛЕННЫЙ КОД:
+import pytest
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException, WebDriverException
+
+@pytest.fixture
+def browser():
+    driver = webdriver.Chrome()  # Убедитесь, что у вас установлен ChromeDriver
+    yield driver
+    driver.quit()
+
+def test_logo_navigation(browser):
+    try:
+        # 1. Открываем страницу https://welltory.com/plans/
+        browser.get("https://welltory.com/plans/")
+
+        # 2. Находим ссылку на логотип
+        logo_link = WebDriverWait(browser, 10).until(
+            EC.presence_of_element_located((By.CLASS_NAME, 'ALink_link__cECDm.Header_logoLink__smJHy'))
+        )
+
+        # 3. Получаем URL ссылки на логотип
+        logo_url = logo_link.get_attribute('href')
+
+        # 4. Проверяем, что URL ссылки на логотип соответствует ожидаемому
+        expected_url = "https://welltory.com/"
+        assert logo_url == expected_url, f"URL логотипа {logo_url} не соответствует ожидаемому {expected_url}"
+
+        # 5. Кликаем по ссылке на логотип
+        WebDriverWait(browser, 10).until(
+            EC.element_to_be_clickable((By.CLASS_NAME, 'ALink_link__cECDm.Header_logoLink__smJHy'))
+        )
+        logo_link.click()
+
+        # Добавляем отладочную информацию
+        current_url_after_click = browser.current_url
+        print(f"Current URL after click: {current_url_after_click}")
+
+        # 6. Проверяем, что переход выполнен успешно и мы находимся на странице https://welltory.com/
+        WebDriverWait(browser, 20).until(EC.url_to_be(expected_url))
+        assert browser.current_url == expected_url, f"Текущий URL {browser.current_url} не соответствует ожидаемому {expected_url}"
+
+        # 7. Проверяем, что на отображаемой странице присутствует текст "A Healthier Happier You"
+        page_text = WebDriverWait(browser, 20).until(
+            EC.presence_of_element_located((By.XPATH, "//*[contains(text(), 'A Healthier Happier You')]"))
+        )
+        assert page_text is not None, "Текст 'A Healthier Happier You' не найден на странице"
+
+    except TimeoutException as e:
+        current_url = browser.current_url
+        pytest.fail(f"Test failed due to TimeoutException. Current URL: {current_url}. Exception: {str(e)}")
+    except WebDriverException as e:
+        pytest.fail(f"Test failed due to WebDriverException: {str(e)}")
+    except Exception as e:
+        pytest.fail(f"Test failed due to an unexpected exception: {str(e)}")
+    finally:
+        # 8. Закрываем браузер
+        browser.quit()
+
+
+РЕЗУЛЬТАТ ПРОЙДЕННОГО ТЕСТА (ответ в логах консоли):
+C:\Users\ilyas\PycharmProjects\Welltory\venv\Scripts\python.exe "C:/Program Files/JetBrains/PyCharm Community Edition 2024.1/plugins/python-ce/helpers/pycharm/_jb_pytest_runner.py" --path C:\Users\ilyas\PycharmProjects\Welltory\autotests\x_test.py
+Testing started at 13:25 ...
+Launching pytest with arguments C:\Users\ilyas\PycharmProjects\Welltory\autotests\x_test.py --no-header --no-summary -q in C:\Users\ilyas\PycharmProjects\Welltory\autotests
+
+============================= test session starts =============================
+collecting ... collected 1 item
+
+x_test.py::test_logo_navigation FAILED                                   [100%]Current URL after click: https://welltory.com/plans/
+
+x_test.py:15 (test_logo_navigation)
+browser = <selenium.webdriver.chrome.webdriver.WebDriver (session="8d156ed5f4cc19b348f0caad75a5c26e")>
+
+    def test_logo_navigation(browser):
+        try:
+            # 1. Открываем страницу https://welltory.com/plans/
+            browser.get("https://welltory.com/plans/")
+
+            # 2. Находим ссылку на логотип
+            logo_link = WebDriverWait(browser, 10).until(
+                EC.presence_of_element_located((By.CLASS_NAME, 'ALink_link__cECDm.Header_logoLink__smJHy'))
+            )
+
+            # 3. Получаем URL ссылки на логотип
+            logo_url = logo_link.get_attribute('href')
+
+            # 4. Проверяем, что URL ссылки на логотип соответствует ожидаемому
+            expected_url = "https://welltory.com/"
+            assert logo_url == expected_url, f"URL логотипа {logo_url} не соответствует ожидаемому {expected_url}"
+
+            # 5. Кликаем по ссылке на логотип
+            WebDriverWait(browser, 10).until(
+                EC.element_to_be_clickable((By.CLASS_NAME, 'ALink_link__cECDm.Header_logoLink__smJHy'))
+            )
+            logo_link.click()
+
+            # Добавляем отладочную информацию
+            current_url_after_click = browser.current_url
+            print(f"Current URL after click: {current_url_after_click}")
+
+            # 6. Проверяем, что переход выполнен успешно и мы находимся на странице https://welltory.com/
+>           WebDriverWait(browser, 20).until(EC.url_to_be(expected_url))
+
+x_test.py:44:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <selenium.webdriver.support.wait.WebDriverWait (session="8d156ed5f4cc19b348f0caad75a5c26e")>
+method = <function url_to_be.<locals>._predicate at 0x0000024E27A81440>
+message = ''
+
+    def until(self, method: Callable[[D], Union[Literal[False], T]], message: str = "") -> T:
+        """Calls the method provided with the driver as an argument until the \
+        return value does not evaluate to ``False``.
+
+        :param method: callable(WebDriver)
+        :param message: optional message for :exc:`TimeoutException`
+        :returns: the result of the last call to `method`
+        :raises: :exc:`selenium.common.exceptions.TimeoutException` if timeout occurs
+        """
+        screen = None
+        stacktrace = None
+
+        end_time = time.monotonic() + self._timeout
+        while True:
+            try:
+                value = method(self._driver)
+                if value:
+                    return value
+            except self._ignored_exceptions as exc:
+                screen = getattr(exc, "screen", None)
+                stacktrace = getattr(exc, "stacktrace", None)
+            time.sleep(self._poll)
+            if time.monotonic() > end_time:
+                break
+>       raise TimeoutException(message, screen, stacktrace)
+E       selenium.common.exceptions.TimeoutException: Message:
+
+..\venv\Lib\site-packages\selenium\webdriver\support\wait.py:105: TimeoutException
+
+During handling of the above exception, another exception occurred:
+
+browser = <selenium.webdriver.chrome.webdriver.WebDriver (session="8d156ed5f4cc19b348f0caad75a5c26e")>
+
+    def test_logo_navigation(browser):
+        try:
+            # 1. Открываем страницу https://welltory.com/plans/
+            browser.get("https://welltory.com/plans/")
+
+            # 2. Находим ссылку на логотип
+            logo_link = WebDriverWait(browser, 10).until(
+                EC.presence_of_element_located((By.CLASS_NAME, 'ALink_link__cECDm.Header_logoLink__smJHy'))
+            )
+
+            # 3. Получаем URL ссылки на логотип
+            logo_url = logo_link.get_attribute('href')
+
+            # 4. Проверяем, что URL ссылки на логотип соответствует ожидаемому
+            expected_url = "https://welltory.com/"
+            assert logo_url == expected_url, f"URL логотипа {logo_url} не соответствует ожидаемому {expected_url}"
+
+            # 5. Кликаем по ссылке на логотип
+            WebDriverWait(browser, 10).until(
+                EC.element_to_be_clickable((By.CLASS_NAME, 'ALink_link__cECDm.Header_logoLink__smJHy'))
+            )
+            logo_link.click()
+
+            # Добавляем отладочную информацию
+            current_url_after_click = browser.current_url
+            print(f"Current URL after click: {current_url_after_click}")
+
+            # 6. Проверяем, что переход выполнен успешно и мы находимся на странице https://welltory.com/
+            WebDriverWait(browser, 20).until(EC.url_to_be(expected_url))
+            assert browser.current_url == expected_url, f"Текущий URL {browser.current_url} не соответствует ожидаемому {expected_url}"
+
+            # 7. Проверяем, что на отображаемой странице присутствует текст "A Healthier Happier You"
+            page_text = WebDriverWait(browser, 20).until(
+                EC.presence_of_element_located((By.XPATH, "//*[contains(text(), 'A Healthier Happier You')]"))
+            )
+            assert page_text is not None, "Текст 'A Healthier Happier You' не найден на странице"
+
+        except TimeoutException as e:
+            current_url = browser.current_url
+>           pytest.fail(f"Test failed due to TimeoutException. Current URL: {current_url}. Exception: {str(e)}")
+E           Failed: Test failed due to TimeoutException. Current URL: https://welltory.com/auth/signin/. Exception: Message:
+
+x_test.py:55: Failed
+
+
+============================= 1 failed in 46.96s ==============================
+
+Process finished with exit code 1
+
+
+ПОЯСНЕНИЯ AI:
+Судя по логам, после клика на логотип вместо перенаправления на главную страницу (https://welltory.com/), происходит переход на страницу авторизации (https://welltory.com/auth/signin/). Это может быть связано с тем, что сайт требует авторизацию для выполнения определённых действий, или это может быть багом на сайте.
+Для точной диагностики проблемы можно добавить несколько проверок перед кликом по логотипу и после этого. Например, проверить, есть ли на странице признаки авторизации и попытаться обойти их, если возможно.
+Объяснение изменений:
+1. Отладочная информация: Добавлены выводы текущего URL после клика и после ожидания, чтобы понять, что происходит на разных этапах.
+2. Повторная проверка URL: Повторная проверка текущего URL после ожидания.
+
+ИСПРАВЛЕННЫЙ КОД:
+import pytest
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException, WebDriverException
+
+@pytest.fixture
+def browser():
+    driver = webdriver.Chrome()  # Убедитесь, что у вас установлен ChromeDriver
+    yield driver
+    driver.quit()
+
+def test_logo_navigation(browser):
+    try:
+        # 1. Открываем страницу https://welltory.com/plans/
+        browser.get("https://welltory.com/plans/")
+
+        # 2. Находим ссылку на логотип
+        logo_link = WebDriverWait(browser, 10).until(
+            EC.presence_of_element_located((By.CLASS_NAME, 'ALink_link__cECDm.Header_logoLink__smJHy'))
+        )
+
+        # 3. Получаем URL ссылки на логотип
+        logo_url = logo_link.get_attribute('href')
+
+        # 4. Проверяем, что URL ссылки на логотип соответствует ожидаемому
+        expected_url = "https://welltory.com/"
+        assert logo_url == expected_url, f"URL логотипа {logo_url} не соответствует ожидаемому {expected_url}"
+
+        # 5. Кликаем по ссылке на логотип
+        WebDriverWait(browser, 10).until(
+            EC.element_to_be_clickable((By.CLASS_NAME, 'ALink_link__cECDm.Header_logoLink__smJHy'))
+        )
+        logo_link.click()
+
+        # Добавляем отладочную информацию
+        current_url_after_click = browser.current_url
+        print(f"Current URL after click: {current_url_after_click}")
+
+        # 6. Проверяем, что переход выполнен успешно и мы находимся на странице https://welltory.com/
+        WebDriverWait(browser, 20).until(EC.url_to_be(expected_url))
+
+        # Повторная проверка текущего URL
+        final_url = browser.current_url
+        print(f"Final URL after wait: {final_url}")
+        assert final_url == expected_url, f"Текущий URL {final_url} не соответствует ожидаемому {expected_url}"
+
+        # 7. Проверяем, что на отображаемой странице присутствует текст "A Healthier Happier You"
+        page_text = WebDriverWait(browser, 20).until(
+            EC.presence_of_element_located((By.XPATH, "//*[contains(text(), 'A Healthier Happier You')]"))
+        )
+        assert page_text is not None, "Текст 'A Healthier Happier You' не найден на странице"
+
+    except TimeoutException as e:
+        current_url = browser.current_url
+        pytest.fail(f"Test failed due to TimeoutException. Current URL: {current_url}. Exception: {str(e)}")
+    except WebDriverException as e:
+        pytest.fail(f"Test failed due to WebDriverException: {str(e)}")
+    except Exception as e:
+        pytest.fail(f"Test failed due to an unexpected exception: {str(e)}")
+    finally:
+        # 8. Закрываем браузер
+        browser.quit()
+
+
+РЕЗУЛЬТАТ ПРОЙДЕННОГО ТЕСТА (ответ в логах консоли):
+C:\Users\ilyas\PycharmProjects\Welltory\venv\Scripts\python.exe "C:/Program Files/JetBrains/PyCharm Community Edition 2024.1/plugins/python-ce/helpers/pycharm/_jb_pytest_runner.py" --path C:\Users\ilyas\PycharmProjects\Welltory\autotests\x_test.py
+Testing started at 15:04 ...
+Launching pytest with arguments C:\Users\ilyas\PycharmProjects\Welltory\autotests\x_test.py --no-header --no-summary -q in C:\Users\ilyas\PycharmProjects\Welltory\autotests
+
+============================= test session starts =============================
+collecting ... collected 1 item
+
+x_test.py::test_logo_navigation FAILED                                   [100%]Current URL after click: https://welltory.com/plans/
+
+x_test.py:15 (test_logo_navigation)
+browser = <selenium.webdriver.chrome.webdriver.WebDriver (session="552c8ed155dd4d250c17bcd04c02ee31")>
+
+    def test_logo_navigation(browser):
+        try:
+            # 1. Открываем страницу https://welltory.com/plans/
+            browser.get("https://welltory.com/plans/")
+
+            # 2. Находим ссылку на логотип
+            logo_link = WebDriverWait(browser, 10).until(
+                EC.presence_of_element_located((By.CLASS_NAME, 'ALink_link__cECDm.Header_logoLink__smJHy'))
+            )
+
+            # 3. Получаем URL ссылки на логотип
+            logo_url = logo_link.get_attribute('href')
+
+            # 4. Проверяем, что URL ссылки на логотип соответствует ожидаемому
+            expected_url = "https://welltory.com/"
+            assert logo_url == expected_url, f"URL логотипа {logo_url} не соответствует ожидаемому {expected_url}"
+
+            # 5. Кликаем по ссылке на логотип
+            WebDriverWait(browser, 10).until(
+                EC.element_to_be_clickable((By.CLASS_NAME, 'ALink_link__cECDm.Header_logoLink__smJHy'))
+            )
+            logo_link.click()
+
+            # Добавляем отладочную информацию
+            current_url_after_click = browser.current_url
+            print(f"Current URL after click: {current_url_after_click}")
+
+            # 6. Проверяем, что переход выполнен успешно и мы находимся на странице https://welltory.com/
+>           WebDriverWait(browser, 20).until(EC.url_to_be(expected_url))
+
+x_test.py:44:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <selenium.webdriver.support.wait.WebDriverWait (session="552c8ed155dd4d250c17bcd04c02ee31")>
+method = <function url_to_be.<locals>._predicate at 0x0000024E036114E0>
+message = ''
+
+    def until(self, method: Callable[[D], Union[Literal[False], T]], message: str = "") -> T:
+        """Calls the method provided with the driver as an argument until the \
+        return value does not evaluate to ``False``.
+
+        :param method: callable(WebDriver)
+        :param message: optional message for :exc:`TimeoutException`
+        :returns: the result of the last call to `method`
+        :raises: :exc:`selenium.common.exceptions.TimeoutException` if timeout occurs
+        """
+        screen = None
+        stacktrace = None
+
+        end_time = time.monotonic() + self._timeout
+        while True:
+            try:
+                value = method(self._driver)
+                if value:
+                    return value
+            except self._ignored_exceptions as exc:
+                screen = getattr(exc, "screen", None)
+                stacktrace = getattr(exc, "stacktrace", None)
+            time.sleep(self._poll)
+            if time.monotonic() > end_time:
+                break
+>       raise TimeoutException(message, screen, stacktrace)
+E       selenium.common.exceptions.TimeoutException: Message:
+
+..\venv\Lib\site-packages\selenium\webdriver\support\wait.py:105: TimeoutException
+
+During handling of the above exception, another exception occurred:
+
+browser = <selenium.webdriver.chrome.webdriver.WebDriver (session="552c8ed155dd4d250c17bcd04c02ee31")>
+
+    def test_logo_navigation(browser):
+        try:
+            # 1. Открываем страницу https://welltory.com/plans/
+            browser.get("https://welltory.com/plans/")
+
+            # 2. Находим ссылку на логотип
+            logo_link = WebDriverWait(browser, 10).until(
+                EC.presence_of_element_located((By.CLASS_NAME, 'ALink_link__cECDm.Header_logoLink__smJHy'))
+            )
+
+            # 3. Получаем URL ссылки на логотип
+            logo_url = logo_link.get_attribute('href')
+
+            # 4. Проверяем, что URL ссылки на логотип соответствует ожидаемому
+            expected_url = "https://welltory.com/"
+            assert logo_url == expected_url, f"URL логотипа {logo_url} не соответствует ожидаемому {expected_url}"
+
+            # 5. Кликаем по ссылке на логотип
+            WebDriverWait(browser, 10).until(
+                EC.element_to_be_clickable((By.CLASS_NAME, 'ALink_link__cECDm.Header_logoLink__smJHy'))
+            )
+            logo_link.click()
+
+            # Добавляем отладочную информацию
+            current_url_after_click = browser.current_url
+            print(f"Current URL after click: {current_url_after_click}")
+
+            # 6. Проверяем, что переход выполнен успешно и мы находимся на странице https://welltory.com/
+            WebDriverWait(browser, 20).until(EC.url_to_be(expected_url))
+
+            # Повторная проверка текущего URL
+            final_url = browser.current_url
+            print(f"Final URL after wait: {final_url}")
+            assert final_url == expected_url, f"Текущий URL {final_url} не соответствует ожидаемому {expected_url}"
+
+            # 7. Проверяем, что на отображаемой странице присутствует текст "A Healthier Happier You"
+            page_text = WebDriverWait(browser, 20).until(
+                EC.presence_of_element_located((By.XPATH, "//*[contains(text(), 'A Healthier Happier You')]"))
+            )
+            assert page_text is not None, "Текст 'A Healthier Happier You' не найден на странице"
+
+        except TimeoutException as e:
+            current_url = browser.current_url
+>           pytest.fail(f"Test failed due to TimeoutException. Current URL: {current_url}. Exception: {str(e)}")
+E           Failed: Test failed due to TimeoutException. Current URL: https://welltory.com/auth/signin/. Exception: Message:
+
+x_test.py:59: Failed
+
+
+============================= 1 failed in 48.61s ==============================
+
+Process finished with exit code 1
+
+ПОЯСНЕНИЕ AI:
+Судя по логам, после клика на логотип происходит перенаправление на страницу авторизации (https://welltory.com/auth/signin/). Это указывает на то, что доступ к главной странице (https://welltory.com/) требует аутентификации пользователя.
+
+Возможные причины и решения
+1. Требуется аутентификация:
+Некоторые действия могут требовать авторизации пользователя. Возможно, это связано с вашими учетными данными или сессией.
+2. Изменение структуры сайта:
+Возможно, что структура сайта была изменена, и тест больше не соответствует текущему состоянию сайта.
+3. Перенаправление на основе состояния сессии:
+Возможно, что сайт перенаправляет неавторизованных пользователей на страницу входа, если они пытаются перейти на определенные страницы.
+
+ВЫВОД=========>ОШИБКА (присутствует BUG)
