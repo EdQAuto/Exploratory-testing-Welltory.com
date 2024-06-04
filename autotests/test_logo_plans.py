@@ -10,6 +10,7 @@ def test_logo_navigation():
     try:
         driver.get("https://welltory.com/plans/")
         WebDriverWait(driver, 15).until(
+
             EC.presence_of_element_located((By.CSS_SELECTOR, ".ALink_link__cECDm.Header_logoLink__smJHy"))
         )
         logo_link = WebDriverWait(driver, 15).until(
