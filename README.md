@@ -63,7 +63,7 @@
 
 #### 🎬 При нажатии на кнопку <a target="_blank" href="https://welltory.com/plans">Plans</a> происходит переход на соответствующую страницу сайта 🐞
 
-https://github.com/EdQAuto/Welltory/assets/166423821/783a0953-f6a6-416c-b8d5-7f9ddcda3965
+https://github.com/EdQAuto/Welltory/assets/166423821/d561a4ee-b8b3-4c84-a36d-43cc66c46f39
 
 ----
 
