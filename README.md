@@ -61,7 +61,7 @@
 
 ### 🎬 Видео прохождение автотестов
 
-#### 🐞При нажатии на логотип <img src="https://assets-global.website-files.com/660e8783c2152f6174eadc26/661304852a6aba8cccf8b761_menu%20logo.svg" alt="" width="Auto" class="image-62"> на странице <a target="_blank" href="https://welltory.com/plans">Plans</a> не происходит переход на <a target="_blank" href="https://welltory.com">главную</a> страницу сайта 🐞
+#### 🐞При нажатии на логотип <img src="https://assets-global.website-files.com/660e8783c2152f6174eadc26/661304852a6aba8cccf8b761_menu%20logo.svg" alt="" width="Auto" class="image-62"> , на странице <a target="_blank" href="https://welltory.com/plans">Plans</a> не происходит переход на <a target="_blank" href="https://welltory.com">главную</a> страницу сайта 🐞
 
 https://github.com/EdQAuto/Welltory/assets/166423821/d561a4ee-b8b3-4c84-a36d-43cc66c46f39
 
