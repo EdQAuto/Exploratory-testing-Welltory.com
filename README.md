@@ -80,7 +80,7 @@
 1. macOS Sonoma
 - браузер Safari, версия 17, разрешение экрана 2560 x 1600
 2. Windows 11 Домашняя, версия 21H2,
-браузер Яндекс.Браузер версия 24.1.0.2570, разрешение экрана 1920х1080
+- браузер Google Chrome, версия 125.0.6422.142, разрешение экрана 1920х1080
 
 https://github.com/EdQAuto/Exploratory-testing-Welltory.com/assets/166423821/ce61ef97-3fd2-4402-81bc-72dd5bf62cd3
 
