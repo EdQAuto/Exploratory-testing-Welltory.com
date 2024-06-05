@@ -96,7 +96,7 @@ https://github.com/EdQAuto/Exploratory-testing-Welltory.com/assets/166423821/2d4
 
 https://github.com/EdQAuto/Welltory/assets/166423821/d561a4ee-b8b3-4c84-a36d-43cc66c46f39
 
-## Подробная информация о логах и работе с ChatGPT, содержится в папке: gpt/promt_engineering_tests
+## Подробная информация о логах и работе с ChatGPT, содержится в папке: > <a target="_blank" href="https://github.com/EdQAuto/Exploratory-testing-Welltory.com/tree/de1bb04c707ba76ff944cb0e8da36d78d68a3df8/gpt/promt_engineering_tests/">Ссылка</a>
 ----
 
 # ❗️В РАЗРАБОТКЕ❗️
